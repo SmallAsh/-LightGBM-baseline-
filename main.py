@@ -202,7 +202,7 @@ if __name__ == "__main__":
     train_model = Train_model()
     train_model.data()
     for target in [ "p1", "p2", "p3", "p4", "p5", "p6" ]:
-        # 由于机器的原因这里为了并没有分别调参数
+
         train_model.train(target, lgb_params)
     train_model.sub_result()
     print("time:{:6.4f} mins".format((time.time() - a) / 60))
