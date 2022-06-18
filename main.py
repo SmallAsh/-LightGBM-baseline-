@@ -6,13 +6,13 @@ plt.rcParams['axes.unicode_minus'] = False
 import seaborn as sns
 from scipy.stats import norm
 path = "D:\机器学习课设/"
-print(1)
+
 train_df = pd.read_csv(path+"candidate_train.csv", encoding='utf-8')
 train_answer = pd.read_csv(path+"train_answer.csv", encoding='utf-8')
-print(2)
+
 print(train_answer.head())
 print(train_answer.corr(method='pearson', min_periods=1))
-print(3)
+
 sns.heatmap(train_answer.corr(method='pearson', min_periods=1),annot=True, vmax=1,vmin = 0, cmap="YlGnBu")
 plt.show()
 
@@ -20,7 +20,7 @@ print(train_df.head())
 print(train_df.shape)
 
 print(train_df["0"].nunique())
-print(4)
+
 cols = []
 train_nuniq = []
 uniq_num = []
@@ -34,7 +34,7 @@ feat_drop = pd.DataFrame({'columns':cols,
 feat_drop.to_csv('D:\机器学习课设/columns_nunique.csv',index=None,encoding='utf-8-sig')
 feat_drop = pd.read_csv('D:\机器学习课设/columns_nunique.csv', encoding='utf-8')
 tmp = feat_drop.groupby("train_nuniq", as_index=False)['columns'].agg({"count":"count"})
-print(5)
+
 def autolabel(rects):
     for rect in rects:
         height = rect.get_height()
@@ -63,11 +63,6 @@ print(train_df["7"].value_counts()/train_df.shape[0])
 
 # baseline,成绩10.5
 # coding=utf-8
-'''
-Created on 2020年2月11日
-
-@author: 入土为安
-'''
 import os
 import time
 import psutil
@@ -128,8 +123,7 @@ class Train_model():
 
     def train(self, target, params):
         """模型训练
-        @param target: str 需要训练的标签，分别是"p1","p2","p3","p4","p5","p6"
-        @param params: dict 针对不同的标签使用模型的参数
+  
         """
         train_data = self.train_data.copy()
         test_data = self.test_data.copy()
