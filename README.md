@@ -1,2 +1,2 @@
 # -LightGBM-baseline-
-机器学习课程设计
+深度学习课程设计
